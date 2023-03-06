@@ -16,7 +16,7 @@ public class BulkRecordInsertFinalizer implements Finalizer{
                 new Bulk_Record_Insert_Status__c(Id = bulkInsertStatusId, Inserted_Amount__c = queriedStatus.Inserted_Amount__c)
         
         3. Check if the Queueable failed via ctx.getResult(). 
-           If it failed, update the bulkRecordInsertStatus record's Job_Failure__c field to false, and return out of this method
+           If it failed, update the bulkRecordInsertStatus record's Job_Failure__c field to true, and return out of this method
         
         4. Increment bulkRecordInsertStatus Inserted_Amount__c by recordsInserted, and update the record
     }
